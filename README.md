@@ -5,6 +5,7 @@ This is an application which can be used by everyone , from your grandma to your
 to build this project the steps are
 
 git clone https://github.com/TechMHackathon2k16/NullSec_12.git
+
 cd NullSec_12
 npm install
 npm start
