@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Login</title>
+		<meta name="author" content="Ankur" />
+    <link rel="stylesheet" href="./css/defaultn.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  </head>
+  <body background = "./css/login.jpg">
+    <div class="container demo-1">
+      <center><h1>LOGIN</h1></center>
+      <br><br><br>
+      <div>
+        <center><br><font size="6">UserName</font><br>
+        <input class="form-control input-lg" id="username" type="text">
+        </center>
+      </div>
+      <div>
+        <center><br><font size="6">Password</font><br>
+        <input class="form-control input-lg" id="password" type="password">
+			</center>
+        <br><br><center> <button type="button" class="btn btn-default btn-lg" onclick="goes();">SUBMIT</button></center>
+      </div>
+    </div><!-- /container -->
+  </body>
+	<script>
+		var goes = function(){
+			var username = document.getElementById('username').value;
+			var asd = { username: username	};
+console.log(asd.username);
+
+function getBaseurl() { var re = new RegExp(/^.*\//); return re.exec(window.location.href); }
+
+
+$.ajax({ type: 'POST',url: '/',data: JSON.stringify(asd),contentType: "application/json",dataType: 'json'});
+if(asd.username==="teacher")
+var reder = getBaseurl()+"newclass";
+else
+var reder = getBaseurl()+"class?id=1234";
+window.location.assign(reder);
+//console.log(reder);
+	}
+
+	</script>
+</html>

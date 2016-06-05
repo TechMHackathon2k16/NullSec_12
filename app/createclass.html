@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Create Class</title>
+		<meta name="author" content="Chandan" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script>
+			var goes = function(){
+				var name = document.getElementById('Name').value;
+				var subject = document.getElementById('Subject').value;
+				var desc = document.getElementById('Desc').value;
+				var newclass = { name: name, sub: subject, desc: desc	};
+
+
+				function getBaseurl() { var re = new RegExp(/^.*\//); return re.exec(window.location.href); }
+				var reder = getBaseurl()+"class?id="+name;
+
+$.ajax({ type: 'POST',url: '/newclass',data: JSON.stringify(newclass),success: function(data) {console.log("sadf"); window.location.assign(reder); },error: function(data) {console.log("sa"); window.location.assign(reder); },contentType: "application/json",dataType: 'json'});
+window.location.assign(reder);
+console.log(reder);
+		}
+		</script>
+	</head>
+	<body class="nl-blurred">
+		<div class="container demo-1">
+			<header>
+				<h1>Class Room Creation Form.</h1>
+			</header>
+			<div class="main clearfix">
+				<form id="Create_Class" class="nl-form">
+					I'm <input id="Name" type="text" value="" placeholder="Teacher Name"/>
+					<br>I want to initiate a class for <input id="Subject" type="text" value="" placeholder="Subject Name"/>
+					<br>	Which will be about <input id="Desc" type="text" value="" placeholder="Description"/>
+					<div class="nl-submit-wrap">
+						<button onclick="goes()" class="nl-submit">Create Class</button>
+					</div>
+					<div class="nl-overlay"></div>
+				</form>
+			</div>
+		</div><!-- /container -->
+		<script src="js/nlform.js"></script>
+		<script>
+			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+		</script>
+	</body>
+</html>
