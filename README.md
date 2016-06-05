@@ -7,8 +7,15 @@ to build this project the steps are
 git clone https://github.com/TechMHackathon2k16/NullSec_12.git
 
 cd NullSec_12
+
 npm install
+
 npm start
 
+visit localhost:3000 or <your ip here>:3000
 
+username :teacher
+password :any
+for login as a teacher.
+Use any other combo for student login.
 P.S. this project uses the NodeJS V6.0.0+ and also uses WebRTC which is supported in most latest browsers
